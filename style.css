@@ -1,7 +1,7 @@
 /* General Styling */
 :root {
-    --primary-color: #d19a9a; /* Soft Pink from the pricelist */
-    --secondary-color: #f7f0f0; /* Light background */
+    --primary-color: #d19a9a; /* Soft Pink */
+    --secondary-color: #f7f0f0; /* Light Background */
     --dark-color: #333333;
     --light-color: #ffffff;
     --heading-font: 'Playfair Display', serif;
@@ -58,6 +58,7 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    height: 70px; /* Menentukan tinggi navbar */
     position: fixed;
     top: 0;
     width: 100%;
@@ -75,11 +76,10 @@ a {
 
 .nav-menu {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     list-style: none;
-}
-
-.nav-item {
-    margin-left: 1.5rem;
+    gap: 1.5rem;
 }
 
 .nav-link {
@@ -89,6 +89,20 @@ a {
 
 .nav-link:hover {
     color: #b37070;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--dark-color);
 }
 
 /* Hero Section */
@@ -162,13 +176,6 @@ a {
     color: var(--dark-color);
 }
 
-.additional-info {
-    margin-top: 1.5rem;
-    background: var(--secondary-color);
-    padding: 1rem;
-    border-radius: 5px;
-}
-
 .homeservice-info {
     text-align: center;
     margin-top: 2rem;
@@ -201,7 +208,7 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease; /* Transisi hanya untuk gambar */
+    transition: transform 0.3s ease;
 }
 
 .gallery-item:hover img {
@@ -229,6 +236,81 @@ a {
 
 .gallery-item:hover .caption {
     opacity: 1;
+}
+
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    border: 1px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-family: var(--body-font);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.filter-btn.active {
+     box-shadow: 0 4px 10px rgba(209, 154, 154, 0.5);
+}
+
+.gallery-item.hide {
+    display: none;
+}
+
+.link-prompt {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 0.5rem; 
+    font-size: 1rem;
+}
+
+.portfolio-instagram-link {
+    text-align: center; 
+    margin-top: 3rem;
+}
+
+.portfolio-instagram-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--secondary-color);
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.portfolio-instagram-link a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    color: var(--primary-color);
+}
+
+.portfolio-instagram-link svg {
+    transition: fill 0.3s ease;
+    fill: var(--dark-color);
+}
+
+.portfolio-instagram-link a:hover svg {
+    fill: var(--primary-color);
 }
 
 /* Contact & Terms Section */
@@ -278,15 +360,6 @@ a {
 .whatsapp-number {
     margin-top: 1rem;
     font-size: 1.1rem;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2rem;
-    background: #e0dcdc;
-    color: #555;
-    font-size: 0.9rem;
 }
 
 /* Lightbox Styling */
@@ -344,81 +417,55 @@ footer {
     }
 }
 
-/* Portfolio Filter Styling */
-.portfolio-filters {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 2rem;
-}
-
-.filter-btn {
-    border: 1px solid var(--primary-color);
-    background-color: transparent;
-    color: var(--primary-color);
-    padding: 0.5rem 1.5rem;
-    border-radius: 50px;
-    font-family: var(--body-font);
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.filter-btn.active {
-     box-shadow: 0 4px 10px rgba(209, 154, 154, 0.5);
-}
-
-.gallery-item.hide {
-    display: none; /* FIX: Ini memperbaiki masalah layout pada galeri */
-}
-
-/* Instagram Link Styling */
-.portfolio-instagram-link {
+/* Footer */
+footer {
     text-align: center;
-    margin-top: 3rem;
-}
-
-.portfolio-instagram-link a {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background-color: var(--secondary-color);
-    padding: 12px 24px;
-    border-radius: 50px;
-    text-decoration: none;
-    color: var(--dark-color);
-    font-weight: 600;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-}
-
-.portfolio-instagram-link a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    color: var(--primary-color);
-}
-
-.portfolio-instagram-link svg {
-    transition: fill 0.3s ease;
-    fill: var(--dark-color);
-}
-
-.portfolio-instagram-link a:hover svg {
-    fill: var(--primary-color);
+    padding: 2rem;
+    background: var(--secondary-color);
+    border-top: 1px solid #e0dcdc;
+    color: #555;
+    font-size: 0.9rem;
 }
 
 
-/* Responsive Design */
+/* === DESAIN RESPONSIVE === */
 @media(max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
     .nav-menu {
-        display: none; 
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--light-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        gap: 0;
+        padding: 1rem 0;
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
     }
 
     .hero-text h1 {
