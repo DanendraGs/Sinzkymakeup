@@ -13,19 +13,18 @@
 
     <header>
         <nav class="navbar">
-    <a href="#" class="nav-logo">@sinzkysmakeup</a>
-    <ul class="nav-menu">
-        <li class="nav-item"><a href="#pricelist" class="nav-link">Pricelist</a></li>
-        <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
-
-    <div class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
-    </nav>
+            <a href="#" class="nav-logo">@sinzkysmakeup</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#pricelist" class="nav-link">Pricelist</a></li>
+                <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
     </header>
 
     <main>
@@ -38,47 +37,44 @@
         </section>
 
         <section id="pricelist" class="container">
-    <h2>Pricelist 2025</h2>
-    <div class="pricelist-container">
-        
-        <div class="pricelist-card">
-            <h3>Non-Wedding Makeup</h3>
-            <ul>
-                <li><span>Graduation Makeup</span><span>225k</span></li>
-                <li><span>Party Makeup</span><span>225k</span></li>
-                <li><span>Pendamping Wisuda</span><span>200k</span></li>
-                <li><span>Bridesmaid Makeup</span><span>200k</span></li>
-                <li><span>Photoshoot Makeup</span><span>200k</span></li>
-                <li><span>Pre-wedding</span><span>300k</span></li>
-                <li><span>Engagement</span><span>300k</span></li>
-                <li><span>Mom/Sister of Bride</span><span>200k</span></li>
-            </ul>
-        </div>
-        
-        <div class="pricelist-card">
-            <h3>Wedding Makeup</h3>
-            <ul>
-                <li><span>Only Akad</span><span>450k</span></li>
-                <li><span>Akad + Resepsi</span><span>650k</span></li>
-            </ul>
-        </div>
+            <h2>Pricelist 2025</h2>
+            <div class="pricelist-container">
+                <div class="pricelist-card">
+                    <h3>Non-Wedding Makeup</h3>
+                    <ul>
+                        <li><span>Graduation Makeup</span><span>225k</span></li>
+                        <li><span>Party Makeup</span><span>225k</span></li>
+                        <li><span>Pendamping Wisuda</span><span>200k</span></li>
+                        <li><span>Bridesmaid Makeup</span><span>200k</span></li>
+                        <li><span>Photoshoot Makeup</span><span>200k</span></li>
+                        <li><span>Pre-wedding</span><span>300k</span></li>
+                        <li><span>Engagement</span><span>300k</span></li>
+                        <li><span>Mom/Sister of Bride</span><span>200k</span></li>
+                    </ul>
+                </div>
+                <div class="pricelist-card">
+                    <h3>Wedding Makeup</h3>
+                    <ul>
+                        <li><span>Only Akad</span><span>450k</span></li>
+                        <li><span>Akad + Resepsi</span><span>650k</span></li>
+                    </ul>
+                </div>
+                <div class="pricelist-card">
+                    <h3>Info & Layanan Tambahan</h3>
+                    <ul>
+                        <li><span>Free Hijab Do</span><span>Included</span></li>
+                        <li><span>Softlens</span><span>+35k</span></li>
+                        <li><span>Simple Hair Do non-sasak (Include Curly)</span><span>+50k</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="homeservice-info">
+                <p>📌 <strong>AVAILABLE FOR HOMESERVICE</strong></p>
+                <p>Biaya di atas belum termasuk biaya transport. Biaya transport dihitung per kilometer dari lokasi MUA di Tambun Selatan.</p>
+            </div>
+        </section>
 
-        <div class="pricelist-card">
-            <h3>Info & Layanan Tambahan</h3>
-            <ul>
-                <li><span>Free Hijab Do</span><span>Included</span></li>
-                <li><span>Softlens</span><span>+35k</span></li>
-                <li><span>Simple Hair Do non-sasak (Include Curly)</span><span>+50k</span></li>
-            </ul>
-        </div>
-
-    </div>
-
-    <div class="homeservice-info">
-        <p>📌 <strong>AVAILABLE FOR HOMESERVICE</strong></p>
-        <p>Biaya di atas belum termasuk biaya transport. Biaya transport dihitung per kilometer dari lokasi MUA di Tambun Selatan.</p>
-    </div>
-</section>
+        </section>
 
       <section id="portfolio" class="container">
     <h2>My Portfolio</h2>
@@ -175,7 +171,6 @@
             <span>Portfolio Lengkap di Instagram</span>
         </a>
     </div>
-    </div>
 </section>
 
         <section id="contact" class="container">
@@ -206,89 +201,64 @@
     </footer>
 
     <div id="lightbox" class="lightbox">
-    <span class="lightbox-close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img">
-</div>
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
 
-<script>
-    // === BAGIAN 1: FUNGSI FILTER GALERI ===
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    <script>
+        // === FUNGSI HAMBURGER MENU ===
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        const navLinks = document.querySelectorAll(".nav-link");
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Hapus kelas 'active' dari semua tombol, lalu tambahkan ke tombol yg diklik
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
 
-            // Dapatkan nilai filter dari tombol yang diklik
-            const filterValue = btn.dataset.filter;
+        navLinks.forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }));
 
-            // Loop melalui semua item galeri
-            galleryItems.forEach(item => {
-                // Jika filter 'semua' atau kategori item cocok dengan filter, tampilkan
-                if (filterValue === 'all' || item.dataset.category === filterValue) {
-                    item.classList.remove('hide');
-                } else { // Jika tidak, sembunyikan
-                    item.classList.add('hide');
-                }
+        // === FUNGSI FILTER GALERI ===
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filterValue = btn.dataset.filter;
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.dataset.category === filterValue) {
+                        item.classList.remove('hide');
+                    } else {
+                        item.classList.add('hide');
+                    }
+                });
             });
         });
-    });
 
+        // === FUNGSI LIGHTBOX ===
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.querySelector('.lightbox-close');
 
-    // === BAGIAN 2: FUNGSI LIGHTBOX (TETAP SAMA) ===
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxClose = document.querySelector('.lightbox-close');
-
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            // Cek apakah item sedang tersembunyi, jika ya, jangan buka lightbox
-            if (item.classList.contains('hide')) {
-                return;
-            }
-            const imageUrl = item.querySelector('img').src;
-            lightboxImg.src = imageUrl;
-            lightbox.classList.add('active');
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (item.classList.contains('hide')) return;
+                const imageUrl = item.querySelector('img').src;
+                lightboxImg.src = imageUrl;
+                lightbox.classList.add('active');
+            });
         });
-    });
 
-    const closeLightbox = () => {
-        lightbox.classList.remove('active');
-    };
-
-    lightboxClose.addEventListener('click', closeLightbox);
-
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            closeLightbox();
-        }
-    });
-</script>
-
-<script>
-    // === BAGIAN BARU: FUNGSI HAMBURGER MENU ===
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
-    const navLinks = document.querySelectorAll(".nav-link");
-
-    hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-    });
-
-    // Fungsi untuk menutup menu saat link di-klik
-    navLinks.forEach(n => n.addEventListener("click", () => {
-        hamburger.classList.remove("active");
-        navMenu.classList.remove("active");
-    }));
-
-
-    // === BAGIAN 1: FUNGSI FILTER GALERI (TETAP SAMA) ===
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    // ... sisa kode JavaScript Anda yang lain ...
-</script>
-
+        const closeLightbox = () => lightbox.classList.remove('active');
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+    </script>
 </body>
 </html>
