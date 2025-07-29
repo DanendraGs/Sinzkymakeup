@@ -420,11 +420,12 @@ a {
 /* Footer */
 footer {
     text-align: center;
-    padding: 2rem;
-    background: var(--secondary-color);
-    border-top: 1px solid #e0dcdc;
-    color: #ffffff;
+    padding: 1rem;
+    background: var(--light-color);   /* Mengubah latar menjadi putih */
+    color: var(--primary-color);      /* Mengubah warna tulisan menjadi pink */
     font-size: 0.9rem;
+    font-weight: 500;                 /* Sedikit menebalkan tulisan agar mudah dibaca */
+    border-top: 1px solid #eee;       /* Garis pemisah tipis di atas footer */
 }
 
 
@@ -460,8 +461,8 @@ footer {
         padding: 1rem 0;
     }
 
-    .nav-menu {
-    position: absolute; /* Ubah ke absolute agar menempel di bawah navbar */
+ .nav-menu {
+    position: absolute;
     top: 70px; /* Posisi tepat di bawah navbar */
     left: 0;
     right: 0;
@@ -471,17 +472,19 @@ footer {
     text-align: center;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     gap: 0;
-    padding: 0; /* Padding akan diatur saat aktif */
+    padding: 1rem 0;
     
-    /* Kunci Animasi Dropdown */
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out;
+    /* Kunci Animasi Baru */
+    opacity: 0;
+    transform: translateY(-10px); /* Posisi awal sedikit di atas */
+    pointer-events: none; /* Tidak bisa diklik saat tersembunyi */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
 .nav-menu.active {
-    max-height: 300px; /* Atur ketinggian maksimal saat menu terbuka */
-    padding: 1rem 0; /* Beri padding saat menu sudah terbuka */
+    opacity: 1;
+    transform: translateY(0); /* Kembali ke posisi normal */
+    pointer-events: auto; /* Bisa diklik lagi saat terlihat */
 }
 
     .hero-text h1 {
