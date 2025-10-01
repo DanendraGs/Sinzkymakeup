@@ -58,13 +58,13 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    height: 70px; /* Menentukan tinggi navbar */
+    height: 70px;
     position: fixed;
     top: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(5px);
-    z-index: 1000;
+    z-index: 1001;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -76,7 +76,6 @@ a {
 
 .nav-menu {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     list-style: none;
     gap: 1.5rem;
@@ -142,8 +141,8 @@ a {
 /* Pricelist Section */
 .pricelist-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
 .pricelist-card {
@@ -443,12 +442,12 @@ a {
 /* Footer */
 footer {
     text-align: center;
-    padding: 1rem;
-    background: var(--light-color);   /* Mengubah latar menjadi putih */
-    color: var(--primary-color);      /* Mengubah warna tulisan menjadi pink */
+    padding: 2rem;
+    background: var(--light-color);
+    color: var(--primary-color);
     font-size: 0.9rem;
-    font-weight: 500;                 /* Sedikit menebalkan tulisan agar mudah dibaca */
-    border-top: 1px solid #eee;       /* Garis pemisah tipis di atas footer */
+    font-weight: 500;
+    border-top: 1px solid #eee;
 }
 
 
@@ -470,39 +469,36 @@ footer {
         transform: translateY(-8px) rotate(-45deg);
     }
 
-     .nav-menu {
+    .nav-menu {
         position: absolute;
-        top: 100%; /* Posisi tepat di bawah parent (.navbar) */
+        top: 100%;
         left: 0;
         right: 0;
-        
         background-color: var(--light-color);
         box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         border-radius: 0 0 15px 15px;
-        padding: 1rem 0;
-        
+        padding: 0;
         display: flex;
         flex-direction: column;
         gap: 0;
-        
-        /* Kunci animasi dropdown yang elegan */
         opacity: 0;
-        transform: translateY(-10px); /* Posisi awal sedikit terangkat */
+        transform: translateY(-10px);
         visibility: hidden;
         transition: all 0.3s ease-out;
     }
 
     .nav-menu.active {
         opacity: 1;
-        transform: translateY(0); /* Kembali ke posisi normal */
+        transform: translateY(0);
         visibility: visible;
+        padding: 1rem 0;
     }
 
     .nav-item {
         margin: 0;
         padding: 0;
-        opacity: 0; /* Awalnya sembunyikan link */
-        transform: translateY(10px); /* Posisi awal link sedikit di bawah */
+        opacity: 0;
+        transform: translateY(10px);
         transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
@@ -511,7 +507,6 @@ footer {
         transform: translateY(0);
     }
 
-    /* Efek staggered (muncul satu per satu) yang indah */
     .nav-menu.active .nav-item:nth-child(1) { transition-delay: 0.1s; }
     .nav-menu.active .nav-item:nth-child(2) { transition-delay: 0.2s; }
     .nav-menu.active .nav-item:nth-child(3) { transition-delay: 0.3s; }
@@ -520,17 +515,7 @@ footer {
         padding: 0.8rem 0;
         display: block;
     }
-
-    /* ... (sisa kode responsive lainnya tetap sama) ... */
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
     
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-
     .hero-text h1 {
         font-size: 2.5rem;
     }
@@ -546,5 +531,12 @@ footer {
     .filter-btn {
         padding: 0.4rem 1rem;
         font-size: 0.9rem;
+    }
+}
+
+/* === [FIX] MEMBUAT 4 KARTU PRICELIST SEJAJAR DI LAYAR LEBAR === */
+@media (min-width: 1200px) {
+    .pricelist-container {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
