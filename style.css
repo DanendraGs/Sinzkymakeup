@@ -363,23 +363,16 @@ a {
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 3rem; /* Memberi jarak lebih lega antar kolom */
     background: var(--light-color);
-    padding: 2rem;
-    border-radius: 10px;
+    padding: 2.5rem; /* Padding lebih besar agar tidak sesak */
+    border-radius: 15px; /* Sudut lebih membulat */
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    align-items: center; /* KUNCI: Membuat kartu kontak di tengah vertikal */
 }
 
 .terms-card, .contact-card {
     padding: 1rem;
-}
-
-.terms-card ul {
-    list-style: none;
-}
-
-.terms-card li {
-    margin-bottom: 0.5rem;
 }
 
 .contact-card {
@@ -578,5 +571,66 @@ footer {
     .filter-btn {
         padding: 0.4rem 1rem;
         font-size: 0.9rem;
+    }
+
+    /* === REVISI TAMPILAN INFORMASI PENTING (MODERN GRID) === */
+
+    .info-grid {
+        display: grid;
+        /* Membuat 1 kolom di HP, otomatis menyesuaikan */
+        gap: 15px;
+        margin-top: 1.5rem;
+    }
+
+    .info-item {
+        background: #fff;
+        border: 1px solid #f0e6e6; /* Garis pink sangat tipis */
+        border-radius: 12px;
+        padding: 15px;
+        display: flex; /* Ikon di kiri, teks di kanan */
+        align-items: center;
+        gap: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.03); /* Bayangan super halus */
+    }
+
+    .info-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(209, 154, 154, 0.2);
+        border-color: var(--primary-color);
+    }
+
+    .info-icon {
+        font-size: 1.5rem;
+        background: #fff0f0; /* Latar belakang pink muda untuk ikon */
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%; /* Membuat lingkaran */
+        flex-shrink: 0;
+    }
+
+    .info-text h4 {
+        margin: 0;
+        font-size: 0.95rem;
+        color: var(--primary-color);
+        font-family: var(--body-font);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .info-text p {
+        margin: 3px 0 0 0;
+        font-size: 0.85rem;
+        color: #666;
+        line-height: 1.4;
+    }
+
+    .info-text strong {
+        color: var(--dark-color);
+        font-weight: 700;
     }
 }
